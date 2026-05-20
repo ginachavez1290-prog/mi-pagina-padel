@@ -1,0 +1,43 @@
+<!-- reservas.html -->
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Reservas Pádel</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <h2>Reserva tu cancha</h2>
+  <h3>NO se permite reservar mas de 3 turnos en un mismo dia al mismo horario</h3>
+  <h3>ya que solo contamos con 3 canchas disponibles.</h3>
+  
+  <form id="formReserva">
+    <label for="nombre/apellido">Nombre/apellido:</label>
+    <input type="text" id="nombre" required><br><br>
+
+    <label for="fecha">Fecha:</label>
+    <input type="date" id="fecha" required><br><br>
+
+    <label for="hora">Hora:</label>
+    <input type="time" id="hora" required><br><br>
+
+    <button type="submit">Reservar</button>
+  </form>
+
+  <h3>📋 Lista de reservas</h3>
+  <table id="tablaReservas" border="1" style="margin: auto; margin-top:20px;">
+    <thead>
+      <tr>
+        <th>Nombre/apellido</th>
+        <th>Fecha</th>
+        <th>Hora</th>
+      </tr>
+    </thead>
+    <tbody>
+      <!-- Aquí se irán agregando las reservas -->
+    </tbody>
+  </table>
+
+  <script src="script.js"></script>
+</body>
+</html>
