@@ -2,34 +2,77 @@
 <html lang="es">
 <head>
     <meta charset="UTF-8">
-    <title>Club de Pádel</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Padel Center Rojas</title>
+
     <link rel="stylesheet" href="style.css">
     <script src="script.js"></script>
 </head>
+
 <body>
-    <header>
-        <h1>Bienvenidos a Blue Pádel Rojas</h1>
-       <nav>
-    <a href="torneos.html"><button>Torneos</button></a>
-    <a href="reservas.html"><button>Reservas</button></a>
-    <a href="buffet.html"><button>buffet</button></a>
-    <button onclick="mostrarSeccion('contacto')">Contacto</button>
-</nav>
-    </header>
-    <!-- Sección oculta al inicio -->
-<section id="contacto" class="seccion" style="display:none;">
-    <h2>Contacto</h2>
-    <p>Email: info@clubpadel.com</p>
-    <p>Teléfono: +54 9 11 1234-5678</p>
+
+<header>
+    <nav>
+        <a href="index.html"><button>Inicio</button></a>
+        <a href="torneos.html"><button>Torneos</button></a>
+        <a href="reservas.html"><button>Reservas</button></a>
+        <a href="buffet.html"><button>Buffet</button></a>
+        <button onclick="mostrarSeccion('contacto')">Contacto</button>
+    </nav>
+</header>
+
+<section class="hero">
+
+    <img src="img/logo.png" alt="Padel Center Rojas" class="logo-central">
+
+    <h1>PADEL CENTER ROJAS</h1>
+
+    <p>Viví la mejor experiencia de pádel.</p>
+
+    <a href="reservas.html" class="btn">
+        Reservar Turno
+    </a>
+
 </section>
 
-<img src="img/portada.jpg" alt="Cancha de padel" witch="400">
-    <h3>¿¡Listo para ganar!?.</h3>
-    <h3>Venite a jugar a Blue Padel Rojas y vivi la mejor experiencia.</h3>
-    <h3>¿Sabias que contamos con buffet?.</h3>
-    
+<section id="canchas">
 
-<script src="script.js"></script>
+    <h2>Nuestras Canchas</h2>
+
+    <div class="cards">
+
+        <div class="card">
+            <h3>Cancha 1</h3>
+            <p>Blindex, césped sintético e iluminación LED.</p>
+        </div>
+
+        <div class="card">
+            <h3>Cancha 2</h3>
+            <p>Ideal para partidos y entrenamientos.</p>
+        </div>
+
+        <div class="card">
+            <h3>Cancha 3</h3>
+            <p>Instalaciones cubiertas de primer nivel.</p>
+        </div>
+
+    </div>
+
+</section>
+
+<section id="contacto" class="seccion" style="display:none;">
+
+    <h2>Contacto</h2>
+
+    <p>📸 Instagram: @padelcenterrojas</p>
+
+    <p>📱 WhatsApp: 2474-467506</p>
+
+</section>
+
+<footer>
+    <p>© 2026 Padel Center Rojas</p>
+</footer>
+
 </body>
 </html>
-
