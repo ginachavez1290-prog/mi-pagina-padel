@@ -27,4 +27,19 @@ nav button:hover {
     margin: 20px;
     border-radius: 10px;
 }
+.rating_star {
+    display: block;
+    overflow: visible;
+    pointer-events: none;
+    width: 2em;
+    heigth: 2em;
+}
 
+.rating_star-ring,
+.rating_star-fill,
+.rating_star-line,
+.rating_star-stroke {
+    animation-duration: 1s;
+    animation-timing-function:ease-in-out;
+    animation-fill-mode:forwards;
+}
