@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Torneos | Padel Center Rojas</title>
+  <link rel="stylesheet" href="torneos.css">
+</head>
+<body>
+
+  <header class="navbar">
+    <a href="#" class="logo-mini">PADEL CENTER <span>ROJAS</span></a>
+
+    <nav>
+      <a href="#inicio">Inicio</a>
+      <a href="#torneos" class="active">Torneos</a>
+      <a href="#reservas">Reservas</a>
+      <a href="#buffet">Buffet</a>
+      <a href="#contacto">Contacto</a>
+    </nav>
+  </header>
+
+  <main id="inicio">
+
+    <section class="hero">
+      <div class="hero-content">
+        <p class="eyebrow">PADEL CENTER ROJAS</p>
+        <h1>TORNEOS</h1>
+        <p>Competí, disfrutá y viví la experiencia de jugar un torneo de pádel.</p>
+        <a href="#proximos" class="btn">Ver próximos torneos</a>
+      </div>
+    </section>
+
+    <section class="section" id="proximos">
+      <div class="section-title">
+        <p class="eyebrow">CALENDARIO</p>
+        <h2>Próximos torneos</h2>
+        <p>Elegí tu categoría y encontrá el torneo que más te guste.</p>
+      </div>
+
+      <div class="filters">
+        <button class="filter active" data-category="todos">Todos</button>
+        <button class="filter" data-category="masculino">Masculino</button>
+        <button class="filter" data-category="femenino">Femenino</button>
+        <button class="filter" data-category="mixto">Mixto</button>
+      </div>
+
+      <div class="tournament-grid" id="tournamentGrid">
+
+        <article class="tournament-card" data-category="masculino">
+          <div class="card-top masculino">
+            <span>Masculino</span>
+            <strong>16 PAREJAS</strong>
+          </div>
+          <div class="card-body">
+            <span class="date">📅 10 OCTUBRE 2026</span>
+            <h3>Torneo Apertura</h3>
+            <p>Competencia por eliminación directa con fase de grupos.</p>
+            <div class="info-row">
+              <span>🏆 $150.000</span>
+              <span>🎾 Nivel: 5ta/6ta</span>
+            </div>
+            <button class="btn register-btn"
+              data-torneo="Torneo Apertura"
+              data-fecha="10 de octubre de 2026"
+              data-categoria="Masculino - 5ta/6ta"
+              data-cupos="16 parejas">
+              Inscribirse
+            </button>
+          </div>
+        </article>
+
+        <article class="tournament-card" data-category="femenino">
+          <div class="card-top femenino">
+            <span>Femenino</span>
+            <strong>12 PAREJAS</strong>
+          </div>
+          <div class="card-body">
+            <span class="date">📅 17 OCTUBRE 2026</span>
+            <h3>Copa Padel Center</h3>
+            <p>Una jornada para competir y disfrutar entre amigas.</p>
+            <div class="info-row">
+              <span>🏆 Premios</span>
+              <span>🎾 Nivel: 5ta/6ta</span>
+            </div>
+            <button class="btn register-btn"
+              data-torneo="Copa Padel Center"
+              data-fecha="17 de octubre de 2026"
+              data-categoria="Femenino - 5ta/6ta"
+              data-cupos="12 parejas">
+              Inscribirse
+            </button>
+          </div>
+        </article>
+
+        <article class="tournament-card" data-category="mixto">
+          <div class="card-top mixto">
+            <span>Mixto</span>
+            <strong>16 PAREJAS</strong>
+          </div>
+          <div class="card-body">
+            <span class="date">📅 24 OCTUBRE 2026</span>
+            <h3>Desafío Mixto</h3>
+            <p>Armá tu pareja y participá de una jornada diferente.</p>
+            <div class="info-row">
+              <span>🏆 Premios</span>
+              <span>🎾 Nivel: Libre</span>
+            </div>
+            <button class="btn register-btn"
+              data-torneo="Desafío Mixto"
+              data-fecha="24 de octubre de 2026"
+              data-categoria="Mixto - Nivel libre"
+              data-cupos="16 parejas">
+              Inscribirse
+            </button>
+          </div>
+        </article>
+
+      </div>
+    </section>
+
+    <section class="section dark-section" id="formato">
+      <div class="section-title light">
+        <p class="eyebrow">¿CÓMO FUNCIONA?</p>
+        <h2>Formato del torneo</h2>
+        <p>Una estructura sencilla para que los jugadores sepan cómo se desarrolla la competencia.</p>
+      </div>
+
+      <div class="steps">
+        <div class="step">
+          <div class="step-number">01</div>
+          <h3>Inscripción</h3>
+          <p>Registrá tu pareja y elegí la categoría correspondiente.</p>
+        </div>
+
+        <div class="step">
+          <div class="step-number">02</div>
+          <h3>Fase de grupos</h3>
+          <p>Las parejas juegan sus primeros partidos para definir la clasificación.</p>
+        </div>
+
+        <div class="step">
+          <div class="step-number">03</div>
+          <h3>Eliminatorias</h3>
+          <p>Las parejas clasificadas avanzan al cuadro de eliminación.</p>
+        </div>
+
+        <div class="step">
+          <div class="step-number">04</div>
+          <h3>Final</h3>
+          <p>Las mejores parejas se enfrentan por el título del torneo.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="section bracket-section">
+      <div class="section-title">
+        <p class="eyebrow">COMPETENCIA</p>
+        <h2>Ejemplo de cuadro</h2>
+        <p>Así podría visualizarse el avance de las parejas en las eliminatorias.</p>
+      </div>
+
+      <div class="bracket">
+        <div class="round">
+          <h3>Cuartos</h3>
+          <div class="match"><span>Los Pibes</span><b>6</b></div>
+          <div class="match"><span>La Banda</span><b>4</b></div>
+          <div class="match"><span>Team Rojas</span><b>6</b></div>
+          <div class="match"><span>Los Crack</span><b>2</b></div>
+        </div>
+
+        <div class="round">
+          <h3>Semifinal</h3>
+          <div class="match"><span>Los Pibes</span><b>6</b></div>
+          <div class="match"><span>Team Rojas</span><b>3</b></div>
+        </div>
+
+        <div class="round final-round">
+          <h3>Final</h3>
+          <div class="match winner"><span>Los Pibes</span><b>6</b></div>
+          <div class="match"><span>Próxima pareja</span><b>4</b></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="cta" id="contacto">
+      <div>
+        <p class="eyebrow">PADEL CENTER ROJAS</p>
+        <h2>¿Listo para competir?</h2>
+        <p>Inscribite con tu pareja y reservá tu lugar en el próximo torneo.</p>
+      </div>
+      <a href="#proximos" class="btn">Elegir torneo</a>
+    </section>
+
+  </main>
+
+  <footer>
+    <p>© 2026 Padel Center Rojas — Todos los derechos reservados.</p>
+  </footer>
+
+  <!-- Modal de inscripción -->
+  <div class="modal" id="registrationModal">
+    <div class="modal-content">
+      <button class="close" id="closeModal">&times;</button>
+
+      <p class="eyebrow">INSCRIPCIÓN</p>
+      <h2 id="modalTitle">Torneo</h2>
+
+      <div class="selected-tournament">
+        <p><strong>Fecha:</strong> <span id="modalDate"></span></p>
+        <p><strong>Categoría:</strong> <span id="modalCategory"></span></p>
+        <p><strong>Cupos:</strong> <span id="modalSlots"></span></p>
+      </div>
+
+      <form id="registrationForm">
+        <label for="name">Nombre y apellido</label>
+        <input type="text" id="name" required placeholder="Ej: Juan Pérez">
+
+        <label for="partner">Nombre de tu pareja</label>
+        <input type="text" id="partner" required placeholder="Ej: Martín Gómez">
+
+        <label for="phone">Teléfono</label>
+        <input type="tel" id="phone" required placeholder="Ej: 2474 123456">
+
+        <button type="submit" class="btn full">Enviar inscripción</button>
+      </form>
+
+      <div class="success" id="successMessage">
+        <span>✓</span>
+        <h3>¡Inscripción registrada!</h3>
+        <p>Este prototipo muestra cómo funcionaría el proceso. En una versión conectada a una base de datos, estos datos se guardarían automáticamente.</p>
+      </div>
+    </div>
+  </div>
+
+  <script src="torneos.js"></script>
+</body>
+</html>
