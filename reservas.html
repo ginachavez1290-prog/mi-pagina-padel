@@ -1,43 +1,191 @@
-<!-- reservas.html -->
+
 <!DOCTYPE html>
 <html lang="es">
 <head>
-  <meta charset="UTF-8">
-  <title>Reservas Pádel</title>
-  <link rel="stylesheet" href="style.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Reservas | Padel Center Rojas</title>
+    <link rel="stylesheet" href="reservas.css">
+    <script src="reservas.js" defer></script>
 </head>
 <body>
-  <h2>Reserva tu cancha</h2>
-  <h3>NO se permite reservar mas de 3 turnos en un mismo dia al mismo horario</h3>
-  <h3>ya que solo contamos con 3 canchas disponibles.</h3>
-  
-  <form id="formReserva">
-    <label for="nombre/apellido">Nombre/apellido:</label>
-    <input type="text" id="nombre" required><br><br>
 
-    <label for="fecha">Fecha:</label>
-    <input type="date" id="fecha" required><br><br>
+    <header class="encabezado">
+        <a href="index.html" class="marca">
+            <img src="logo-padel.png" alt="Logo Padel Center Rojas">
+            <span>PADEL CENTER <strong>ROJAS</strong></span>
+        </a>
 
-    <label for="hora">Hora:</label>
-    <input type="time" id="hora" required><br><br>
+        <nav>
+            <a href="index.html">Inicio</a>
+            <a href="torneos.html">Torneos</a>
+            <a href="reservas.html" class="activo">Reservas</a>
+            <a href="buffet.html">Buffet</a>
+            <a href="contacto.html">Contacto</a>
+        </nav>
+    </header>
 
-    <button type="submit">Reservar</button>
-  </form>
+    <main class="contenedor">
 
-  <h3>📋 Lista de reservas</h3>
-  <table id="tablaReservas" border="1" style="margin: auto; margin-top:20px;">
-    <thead>
-      <tr>
-        <th>Nombre/apellido</th>
-        <th>Fecha</th>
-        <th>Hora</th>
-      </tr>
-    </thead>
-    <tbody>
-      <!-- Aquí se irán agregando las reservas -->
-    </tbody>
-  </table>
+        <section class="presentacion">
+            <p class="etiqueta">PADEL CENTER ROJAS</p>
+            <h1>Reservá tu <span>cancha.</span></h1>
+            <p>Viví la mejor experiencia de pádel.</p>
+        </section>
 
-  <script src="script.js"></script>
+        <section class="contenido">
+
+            <article class="tarjeta formulario-tarjeta">
+                <div class="titulo-seccion">
+                    <span class="simbolo">＋</span>
+                    <div>
+                        <small>RESERVAS ONLINE</small>
+                        <h2>Reservá tu turno</h2>
+                    </div>
+                </div>
+
+                <p class="descripcion">
+                    Completá tus datos para reservar tu próximo partido.
+                </p>
+
+                <form id="reservaForm">
+                    <div class="campo">
+                        <label for="nombre">Nombre y apellido</label>
+                        <input
+                            type="text"
+                            id="nombre"
+                            placeholder="Ej. Juan Pérez"
+                            maxlength="70"
+                            required
+                        >
+                        <small class="error" id="nombreError"></small>
+                    </div>
+
+                    <div class="fila">
+                        <div class="campo">
+                            <label for="fecha">Fecha del partido</label>
+                            <input type="date" id="fecha" required>
+                            <small class="error" id="fechaError"></small>
+                        </div>
+
+                        <div class="campo">
+                            <label for="hora">Horario</label>
+                            <select id="hora" required>
+                                <option value="">Elegí un horario</option>
+                                <option>08:00</option>
+                                <option>09:00</option>
+                                <option>10:00</option>
+                                <option>11:00</option>
+                                <option>12:00</option>
+                                <option>13:00</option>
+                                <option>14:00</option>
+                                <option>15:00</option>
+                                <option>16:00</option>
+                                <option>17:00</option>
+                                <option>18:00</option>
+                                <option>19:00</option>
+                                <option>20:00</option>
+                                <option>21:00</option>
+                                <option>22:00</option>
+                            </select>
+                            <small class="error" id="horaError"></small>
+                        </div>
+                    </div>
+
+                    <div class="aviso">
+                        <span class="info">i</span>
+                        <p>
+                            Disponemos de <strong>3 canchas</strong>.
+                            Se permiten hasta 3 reservas para la misma fecha y hora.
+                        </p>
+                    </div>
+
+                    <button type="submit" class="boton-reservar">
+                        Confirmar reserva <span>→</span>
+                    </button>
+
+                    <p id="mensaje" aria-live="polite"></p>
+                </form>
+            </article>
+
+            <aside class="tarjeta tarjeta-club">
+                <img
+                    src="logo-padel.png"
+                    alt="Padel Center Rojas"
+                    class="logo-grande"
+                >
+
+                <small class="subtitulo-club">TU CLUB, TU LUGAR</small>
+                <h2>El próximo partido te espera.</h2>
+
+                <p>
+                    Juntá a tu dupla, prepará la paleta y vení a disfrutar
+                    del mejor pádel.
+                </p>
+
+                <div class="dato-club">
+                    <span>▦</span>
+                    <div>
+                        <strong>3 canchas</strong>
+                        <small>Disponibles para jugar</small>
+                    </div>
+                </div>
+
+                <div class="dato-club">
+                    <span>◷</span>
+                    <div>
+                        <strong>08:00 a 22:00</strong>
+                        <small>Horarios de reserva</small>
+                    </div>
+                </div>
+
+                <div class="frase-club">¡NOS VEMOS EN LA CANCHA!</div>
+            </aside>
+        </section>
+
+        <section class="tarjeta lista-tarjeta">
+            <div class="titulo-lista">
+                <div class="titulo-seccion">
+                    <span class="simbolo simbolo-lista">▤</span>
+                    <div>
+                        <small>AGENDA DEL CLUB</small>
+                        <h2>Lista de reservas</h2>
+                    </div>
+                </div>
+
+                <div class="contador">
+                    <strong id="cantidadReservas">0</strong>
+                    <span>turnos reservados</span>
+                </div>
+            </div>
+
+            <div class="tabla-contenedor">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Jugador/a</th>
+                            <th>Fecha</th>
+                            <th>Horario</th>
+                            <th>Cancha</th>
+                            <th>Acción</th>
+                        </tr>
+                    </thead>
+                    <tbody id="listaReservas">
+                    </tbody>
+                </table>
+            </div>
+
+            <p class="nota-final">
+                Las reservas se guardan en este navegador.
+                Esta versión de prueba no sincroniza datos entre dispositivos.
+            </p>
+        </section>
+
+        <footer>
+            <span>© <span id="anio"></span> Padel Center Rojas</span>
+            <span>VIVÍ LA MEJOR EXPERIENCIA DE PÁDEL <b>●</b></span>
+        </footer>
+
+    </main>
 </body>
 </html>

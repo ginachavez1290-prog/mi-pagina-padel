@@ -1,566 +1,581 @@
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
 
 :root {
-  --verde: #9bd52b;
-  --verde-hover: #b2ed45;
-  --turquesa: #2d7063;
-  --oscuro: #101412;
-  --gris: #f3f5f2;
-  --texto: #202522;
+    --verde: #A7CF38;
+    --verde-claro: #B8E348;
+    --negro: #10120E;
+    --panel: #1A1D16;
+    --blanco: #FFFFFF;
+    --gris: #C4C7BC;
+    --borde: rgba(167, 207, 56, .30);
+}
+
+* {
+    box-sizing: border-box;
 }
 
 html {
-  scroll-behavior: smooth;
+    scroll-behavior: smooth;
 }
 
 body {
-  font-family: Arial, Helvetica, sans-serif;
-  background: var(--gris);
-  color: var(--texto);
+    margin: 0;
+    background: var(--negro);
+    color: var(--blanco);
+    font-family: Arial, Helvetica, sans-serif;
 }
 
-.navbar {
-  position: sticky;
-  top: 0;
-  z-index: 20;
-  min-height: 78px;
-  padding: 0 7%;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  background: rgba(12, 16, 14, .97);
-  border-bottom: 1px solid rgba(155, 213, 43, .35);
+a {
+    color: inherit;
+    text-decoration: none;
 }
 
-.logo-mini {
-  color: white;
-  text-decoration: none;
-  font-size: 17px;
-  font-weight: 800;
-  letter-spacing: 1px;
+button,
+input,
+select {
+    font: inherit;
 }
 
-.logo-mini span {
-  color: var(--verde);
+.encabezado {
+    min-height: 86px;
+    padding: 12px 5%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 20px;
+    flex-wrap: wrap;
+    background: #080A07;
+    border-bottom: 2px solid var(--verde);
 }
 
-.navbar nav {
-  display: flex;
-  gap: 12px;
+.marca {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    font-size: 16px;
+    font-weight: 900;
+    line-height: 1.2;
 }
 
-.navbar nav a {
-  color: var(--verde);
-  text-decoration: none;
-  padding: 10px 18px;
-  border: 1px solid var(--verde);
-  border-radius: 8px;
-  font-size: 14px;
-  transition: .25s;
+.marca img {
+    width: 60px;
+    height: 60px;
+    object-fit: contain;
+    background: white;
+    border-radius: 50%;
 }
 
-.navbar nav a:hover,
-.navbar nav a.active {
-  color: #101410;
-  background: var(--verde);
+.marca strong {
+    display: block;
+    color: var(--verde);
+}
+
+nav {
+    display: flex;
+    gap: 10px;
+    flex-wrap: wrap;
+}
+
+nav a {
+    padding: 11px 19px;
+    border: 2px solid var(--verde);
+    border-radius: 10px;
+    color: var(--verde);
+    font-size: 13px;
+    font-weight: bold;
+    transition: .2s;
+}
+
+nav a:hover,
+nav a.activo {
+    background: var(--verde);
+    color: var(--negro);
 }
 
 .hero {
-  min-height: 430px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  text-align: center;
-  padding: 80px 20px;
-  background:
-    linear-gradient(rgba(8, 14, 11, .76), rgba(8, 14, 11, .82)),
-    radial-gradient(circle at center, rgba(45,112,99,.7), #080b09 70%);
-  position: relative;
-  overflow: hidden;
+    min-height: 290px;
+    display: flex;
+    align-items: center;
+    padding: 40px 7%;
+    background:
+        linear-gradient(90deg, rgba(0,0,0,.96),
+        rgba(0,0,0,.78) 48%, rgba(0,0,0,.18)),
+        url("https://images.unsplash.com/photo-1622279457486-62dcc4a431d6?auto=format&fit=crop&w=1800&q=85")
+        center 55% / cover;
+    border-bottom: 2px solid var(--verde);
 }
 
-.hero::before,
-.hero::after {
-  content: "";
-  position: absolute;
-  border: 2px solid rgba(155, 213, 43, .18);
-  pointer-events: none;
+.hero-contenido {
+    max-width: 650px;
+    border-left: 7px solid var(--verde);
+    padding-left: 28px;
 }
 
-.hero::before {
-  width: 520px;
-  height: 250px;
-  border-radius: 50%;
-  transform: rotate(-18deg);
-}
-
-.hero::after {
-  width: 780px;
-  height: 300px;
-  border-radius: 50%;
-  transform: rotate(18deg);
-}
-
-.hero-content {
-  position: relative;
-  z-index: 2;
-}
-
-.eyebrow {
-  color: var(--verde);
-  font-weight: 800;
-  letter-spacing: 2px;
-  font-size: 13px;
-  margin-bottom: 12px;
+.etiqueta {
+    color: var(--verde);
+    font-size: 13px;
+    font-weight: 900;
+    letter-spacing: 2px;
 }
 
 .hero h1 {
-  font-size: clamp(48px, 8vw, 88px);
-  color: var(--verde);
-  line-height: 1;
-  margin-bottom: 20px;
+    margin: 8px 0;
+    font-size: clamp(42px, 6vw, 68px);
+    line-height: 1;
 }
 
-.hero p:not(.eyebrow) {
-  color: white;
-  font-size: 20px;
-  margin-bottom: 28px;
+.hero h2 {
+    margin: 12px 0;
+    font-size: clamp(17px, 2vw, 23px);
 }
 
-.btn {
-  display: inline-block;
-  border: none;
-  border-radius: 9px;
-  background: var(--turquesa);
-  color: white;
-  font-weight: 700;
-  padding: 13px 24px;
-  text-decoration: none;
-  cursor: pointer;
-  transition: .25s;
+.hero-contenido > p:not(.etiqueta) {
+    color: #E0E0E0;
+    line-height: 1.7;
+    font-size: 14px;
 }
 
-.btn:hover {
-  background: var(--verde);
-  color: #101410;
-  transform: translateY(-2px);
+.boton {
+    display: inline-flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 20px;
+    padding: 12px 19px;
+    border: 0;
+    border-radius: 30px;
+    font-size: 13px;
+    font-weight: 800;
+    cursor: pointer;
+    transition: .2s;
 }
 
-.section {
-  max-width: 1180px;
-  margin: auto;
-  padding: 75px 25px;
+.boton span {
+    font-size: 19px;
 }
 
-.section-title {
-  text-align: center;
-  max-width: 700px;
-  margin: 0 auto 35px;
+.boton-verde {
+    background: var(--verde);
+    color: #10120D;
 }
 
-.section-title h2 {
-  font-size: 38px;
-  margin-bottom: 10px;
+.boton-verde:hover {
+    background: var(--verde-claro);
+    transform: translateY(-2px);
 }
 
-.section-title p:last-child {
-  color: #65706a;
-  line-height: 1.6;
+.seccion-torneos {
+    max-width: 1400px;
+    margin: auto;
+    padding: 32px 5%;
 }
 
-.filters {
-  display: flex;
-  justify-content: center;
-  flex-wrap: wrap;
-  gap: 10px;
-  margin-bottom: 35px;
+.titulo-seccion {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    margin-bottom: 22px;
 }
 
-.filter {
-  border: 1px solid #cbd3cd;
-  background: white;
-  padding: 10px 20px;
-  border-radius: 30px;
-  cursor: pointer;
-  font-weight: 700;
-  color: #47504b;
-  transition: .2s;
+.icono-trofeo {
+    font-size: 35px;
 }
 
-.filter:hover,
-.filter.active {
-  background: var(--verde);
-  border-color: var(--verde);
-  color: #101410;
+.titulo-seccion h2 {
+    margin: 0 0 6px;
+    font-size: 25px;
 }
 
-.tournament-grid {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 24px;
+.titulo-seccion p {
+    margin: 0;
+    color: var(--gris);
+    font-size: 13px;
 }
 
-.tournament-card {
-  background: white;
-  border-radius: 16px;
-  overflow: hidden;
-  box-shadow: 0 8px 25px rgba(0,0,0,.08);
-  transition: .25s;
-  border: 1px solid #e1e6e2;
+.filtros {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 9px;
+    margin-bottom: 22px;
 }
 
-.tournament-card:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 14px 35px rgba(0,0,0,.12);
+.filtro {
+    padding: 9px 15px;
+    background: transparent;
+    color: var(--gris);
+    border: 1px solid #505547;
+    border-radius: 25px;
+    cursor: pointer;
+    font-size: 12px;
 }
 
-.card-top {
-  min-height: 105px;
-  padding: 20px;
-  display: flex;
-  align-items: flex-end;
-  justify-content: space-between;
-  color: white;
-  background: linear-gradient(135deg, #2d7063, #163b34);
+.filtro:hover,
+.filtro.activo {
+    background: var(--verde);
+    color: var(--negro);
+    border-color: var(--verde);
+    font-weight: bold;
 }
 
-.card-top.masculino {
-  background: linear-gradient(135deg, #2d7063, #153e36);
+.torneos-grid {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 18px;
 }
 
-.card-top.femenino {
-  background: linear-gradient(135deg, #6b7855, #34412d);
+.torneo-card {
+    position: relative;
+    overflow: hidden;
+    padding: 22px;
+    background:
+        radial-gradient(circle at 95% 15%,
+        rgba(167,207,56,.09), transparent 28%),
+        var(--panel);
+    border: 1px solid #424838;
+    border-radius: 12px;
+    transition: .25s;
 }
 
-.card-top.mixto {
-  background: linear-gradient(135deg, #547766, #263f34);
+.torneo-card:hover {
+    transform: translateY(-4px);
+    border-color: var(--verde);
+    box-shadow: 0 12px 30px rgba(0,0,0,.25);
 }
 
-.card-top span {
-  color: var(--verde);
-  font-weight: 800;
+.card-superior {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 8px;
 }
 
-.card-top strong {
-  font-size: 12px;
+.estado {
+    padding: 6px 10px;
+    background: var(--verde);
+    color: var(--negro);
+    border-radius: 20px;
+    font-size: 9px;
+    font-weight: 900;
 }
 
-.card-body {
-  padding: 24px;
+.estado-proximo {
+    background: #414C2C;
+    color: var(--verde-claro);
 }
 
-.date {
-  color: var(--turquesa);
-  font-size: 12px;
-  font-weight: 800;
+.pelota {
+    color: var(--verde);
+    font-size: 32px;
+    text-shadow: 0 0 18px rgba(167,207,56,.4);
 }
 
-.card-body h3 {
-  font-size: 25px;
-  margin: 10px 0;
+.numero {
+    color: var(--verde);
+    font-size: 10px;
+    font-weight: bold;
+    letter-spacing: 2px;
+    margin: 18px 0 7px;
 }
 
-.card-body p {
-  color: #68716c;
-  line-height: 1.5;
-  min-height: 48px;
+.torneo-card h3 {
+    margin: 0;
+    font-size: 23px;
+    text-transform: uppercase;
 }
 
-.info-row {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 8px;
-  margin: 20px 0;
-  font-size: 13px;
-  font-weight: 700;
+.modalidad {
+    margin: 6px 0 20px;
+    color: var(--gris);
+    font-size: 13px;
 }
 
-.info-row span {
-  background: #eef4ec;
-  padding: 7px 9px;
-  border-radius: 6px;
+.datos-torneo {
+    display: grid;
+    gap: 13px;
+    margin-bottom: 23px;
 }
 
-.register-btn {
-  width: 100%;
+.datos-torneo p {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin: 0;
+    font-size: 12px;
+    color: #E2E3DC;
 }
 
-.dark-section {
-  max-width: none;
-  background: #101512;
-  color: white;
+.datos-torneo span {
+    color: var(--verde);
+    font-size: 17px;
+    min-width: 19px;
 }
 
-.dark-section .section-title {
-  max-width: 700px;
+.boton-detalles {
+    width: 100%;
 }
 
-.section-title.light p:last-child {
-  color: #b7c0ba;
+.inscripcion {
+    display: grid;
+    grid-template-columns: 1.3fr 1fr;
+    gap: 30px;
+    align-items: center;
+    margin: 0 5% 25px;
+    padding: 30px;
+    background:
+        linear-gradient(100deg, rgba(15,18,11,.98),
+        rgba(15,18,11,.86)),
+        url("https://images.unsplash.com/photo-1554068865-24cecd4e34b8?auto=format&fit=crop&w=1200&q=80")
+        center / cover;
+    border: 1px solid var(--borde);
+    border-radius: 12px;
 }
 
-.steps {
-  max-width: 1180px;
-  margin: auto;
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  gap: 20px;
+.inscripcion h2 {
+    font-size: clamp(25px, 3vw, 36px);
+    margin: 10px 0;
 }
 
-.step {
-  padding: 25px;
-  border: 1px solid rgba(155,213,43,.22);
-  border-radius: 14px;
-  background: rgba(255,255,255,.035);
+.inscripcion-texto > p:not(.etiqueta) {
+    color: var(--gris);
+    line-height: 1.8;
+    font-size: 13px;
 }
 
-.step-number {
-  color: var(--verde);
-  font-size: 25px;
-  font-weight: 900;
-  margin-bottom: 25px;
+.boton-oscuro {
+    margin-top: 10px;
+    background: var(--verde);
+    color: var(--negro);
 }
 
-.step h3 {
-  margin-bottom: 10px;
+.boton-oscuro:hover {
+    background: var(--verde-claro);
 }
 
-.step p {
-  color: #b6c0b9;
-  line-height: 1.5;
+.beneficios {
+    padding: 18px;
+    border-left: 2px solid var(--verde);
 }
 
-.bracket {
-  max-width: 1000px;
-  margin: 40px auto 0;
-  padding: 30px;
-  background: white;
-  border-radius: 16px;
-  box-shadow: 0 8px 25px rgba(0,0,0,.07);
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 30px;
-  overflow-x: auto;
+.beneficios p {
+    font-size: 13px;
+    margin: 15px 0;
 }
 
-.round {
-  min-width: 210px;
+.beneficios span {
+    margin-right: 10px;
+    color: var(--verde);
+    font-weight: 900;
 }
 
-.round h3 {
-  color: var(--turquesa);
-  margin-bottom: 20px;
-  text-align: center;
+.franja-final {
+    display: flex;
+    align-items: center;
+    gap: 18px;
+    margin: 0 5% 25px;
+    padding: 24px;
+    background: #171A12;
+    border: 1px solid var(--borde);
+    border-radius: 10px;
 }
 
-.match {
-  border: 1px solid #dce3dd;
-  border-left: 4px solid var(--verde);
-  padding: 12px;
-  margin: 25px 0;
-  display: flex;
-  justify-content: space-between;
-  background: #f8faf8;
-  border-radius: 5px;
+.trofeo-final {
+    font-size: 33px;
 }
 
-.match.winner {
-  background: #edf7e6;
-  border-color: var(--verde);
+.franja-final h2 {
+    font-size: 17px;
+    margin: 0 0 7px;
 }
 
-.cta {
-  max-width: 1180px;
-  margin: 0 auto 70px;
-  padding: 45px;
-  border-radius: 18px;
-  background: linear-gradient(110deg, #173e35, #2d7063);
-  color: white;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  gap: 30px;
+.franja-final p {
+    color: var(--gris);
+    font-size: 12px;
+    margin: 0;
 }
 
-.cta h2 {
-  font-size: 34px;
-  margin-bottom: 8px;
-}
-
-.cta p:last-child {
-  color: #d8e2dc;
-}
-
-.cta .btn {
-  background: var(--verde);
-  color: #101410;
-  white-space: nowrap;
+.franja-final > strong {
+    margin-left: auto;
+    color: var(--verde);
+    font-style: italic;
+    font-size: 18px;
 }
 
 footer {
-  background: #0a0d0b;
-  color: #8d9791;
-  text-align: center;
-  padding: 25px;
-  font-size: 13px;
-}
-
-/* MODAL */
-.modal {
-  position: fixed;
-  inset: 0;
-  background: rgba(0,0,0,.75);
-  display: none;
-  align-items: center;
-  justify-content: center;
-  z-index: 100;
-  padding: 20px;
-}
-
-.modal.show {
-  display: flex;
-}
-
-.modal-content {
-  position: relative;
-  background: white;
-  width: min(520px, 100%);
-  max-height: 90vh;
-  overflow-y: auto;
-  border-radius: 18px;
-  padding: 35px;
-}
-
-.close {
-  position: absolute;
-  right: 18px;
-  top: 14px;
-  border: none;
-  background: none;
-  font-size: 30px;
-  cursor: pointer;
-  color: #606862;
-}
-
-.modal-content h2 {
-  margin-bottom: 20px;
-}
-
-.selected-tournament {
-  background: #eef5eb;
-  padding: 15px;
-  border-radius: 9px;
-  margin-bottom: 22px;
-  line-height: 1.8;
-  font-size: 14px;
-}
-
-form {
-  display: flex;
-  flex-direction: column;
-  gap: 8px;
-}
-
-form label {
-  font-weight: 700;
-  font-size: 14px;
-  margin-top: 5px;
-}
-
-form input {
-  padding: 13px;
-  border: 1px solid #ccd4ce;
-  border-radius: 7px;
-  font-size: 15px;
-  outline: none;
-}
-
-form input:focus {
-  border-color: var(--verde);
-}
-
-.full {
-  width: 100%;
-  margin-top: 12px;
-}
-
-.success {
-  display: none;
-  text-align: center;
-  padding: 25px 5px 5px;
-}
-
-.success.show {
-  display: block;
-}
-
-.success span {
-  display: inline-flex;
-  width: 55px;
-  height: 55px;
-  align-items: center;
-  justify-content: center;
-  border-radius: 50%;
-  background: var(--verde);
-  font-size: 28px;
-  font-weight: 900;
-  margin-bottom: 15px;
-}
-
-.success h3 {
-  margin-bottom: 10px;
-}
-
-.success p {
-  color: #69736d;
-  line-height: 1.5;
-}
-
-@media (max-width: 900px) {
-  .tournament-grid,
-  .steps {
-    grid-template-columns: 1fr 1fr;
-  }
-
-  .navbar {
-    flex-direction: column;
-    gap: 12px;
-    padding: 15px;
-  }
-
-  .navbar nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 20px;
     flex-wrap: wrap;
+    padding: 18px 5%;
+    border-top: 2px solid var(--verde);
+    background: #080A07;
+}
+
+.marca-footer img {
+    width: 48px;
+    height: 48px;
+}
+
+footer > p {
+    color: #D2D4C9;
+    font-size: 10px;
+    letter-spacing: 3px;
+}
+
+footer b {
+    color: var(--verde);
+}
+
+/* Ventana de inscripción */
+
+.modal {
+    display: none;
+    position: fixed;
+    inset: 0;
+    z-index: 100;
+    padding: 20px;
+    overflow-y: auto;
+    background: rgba(0,0,0,.82);
+    align-items: center;
     justify-content: center;
-  }
+}
+
+.modal.visible {
+    display: flex;
+}
+
+.modal-contenido {
+    position: relative;
+    width: min(470px, 100%);
+    padding: 30px;
+    background: var(--panel);
+    border: 1px solid var(--verde);
+    border-radius: 15px;
+    box-shadow: 0 20px 70px rgba(0,0,0,.5);
+}
+
+.cerrar-modal {
+    position: absolute;
+    top: 12px;
+    right: 15px;
+    background: transparent;
+    color: var(--verde);
+    border: 0;
+    font-size: 30px;
+    cursor: pointer;
+}
+
+.modal-contenido h2 {
+    margin: 10px 0;
+    font-size: 25px;
+}
+
+.modal-contenido > p:not(.etiqueta) {
+    color: var(--gris);
+    font-size: 12px;
+    line-height: 1.6;
+}
+
+.modal-contenido label {
+    display: block;
+    margin: 16px 0 7px;
+    font-size: 12px;
+    font-weight: bold;
+}
+
+.modal-contenido input,
+.modal-contenido select {
+    width: 100%;
+    padding: 12px;
+    background: #10120E;
+    color: white;
+    border: 1px solid #555B4A;
+    border-radius: 7px;
+}
+
+.modal-contenido input:focus,
+.modal-contenido select:focus {
+    outline: 1px solid var(--verde);
+}
+
+.modal-contenido form > button {
+    width: 100%;
+    margin-top: 22px;
+}
+
+#mensajeInscripcion {
+    font-size: 12px;
+    line-height: 1.6;
+}
+
+#mensajeInscripcion.exito {
+    color: var(--verde-claro);
+}
+
+#mensajeInscripcion.error {
+    color: #FFAAAA;
+}
+
+@media (max-width: 950px) {
+    .encabezado {
+        justify-content: center;
+    }
+
+    .torneos-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    .inscripcion {
+        grid-template-columns: 1fr;
+    }
 }
 
 @media (max-width: 600px) {
-  .tournament-grid,
-  .steps {
-    grid-template-columns: 1fr;
-  }
+    nav {
+        justify-content: center;
+        gap: 7px;
+    }
 
-  .navbar nav a {
-    padding: 8px 11px;
-    font-size: 12px;
-  }
+    nav a {
+        padding: 9px 11px;
+        font-size: 11px;
+    }
 
-  .hero {
-    min-height: 380px;
-  }
+    .hero {
+        padding: 35px 5%;
+    }
 
-  .cta {
-    margin: 0 15px 50px;
-    padding: 30px;
-    flex-direction: column;
-    align-items: flex-start;
-  }
+    .hero-contenido {
+        padding-left: 16px;
+    }
 
-  .section {
-    padding: 55px 18px;
-  }
+    .torneos-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .seccion-torneos {
+        padding: 25px 5%;
+    }
+
+    .torneo-card {
+        padding: 20px;
+    }
+
+    .inscripcion {
+        margin: 0 4% 20px;
+        padding: 20px;
+    }
+
+    .franja-final {
+        margin: 0 4% 20px;
+        flex-wrap: wrap;
+    }
+
+    .franja-final > strong {
+        margin-left: 0;
+        width: 100%;
+    }
+
+    footer {
+        justify-content: center;
+        text-align: center;
+    }
 }
