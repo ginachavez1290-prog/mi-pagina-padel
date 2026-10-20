@@ -164,3 +164,130 @@ footer{
     margin-top:40px;
     border-top:3px solid #A2C947;
 }
+
+/* BOTÓN RESERVAR TURNO - PADEL CENTER ROJAS */
+
+.btn-reservar-turno {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 14px;
+
+    padding: 10px 10px;
+    min-width: 30px;
+    min-height: 20px;
+
+    background: linear-gradient(135deg, #B5E64A, #A8D63B);
+    color: #000000;
+
+    font-size: 15px;
+    font-weight: 900;
+    text-decoration: none;
+    text-align: center;
+
+    border: 2px solid #C8F477;
+    border-radius: 999px;
+
+    box-shadow:
+        0 0 12px rgba(168, 214, 59, 0.45),
+        0 0 28px rgba(168, 214, 59, 0.25),
+        0 6px 0 #719B27;
+
+    cursor: pointer;
+    position: relative;
+    overflow: hidden;
+
+    transition:
+        transform 0.25s ease,
+        box-shadow 0.25s ease,
+        filter 0.25s ease;
+
+    animation: entradaReserva 0.7s ease-out,
+               brilloReserva 2.8s ease-in-out 1s infinite;
+}
+
+/* Ícono de calendario */
+.btn-reservar-turno svg {
+    width: 30px;
+    height: 30px;
+    flex-shrink: 0;
+}
+
+/* Efecto al pasar el cursor */
+.btn-reservar-turno:hover {
+    transform: translateY(-4px) scale(1.04);
+    filter: brightness(1.08);
+
+    box-shadow:
+        0 0 18px rgba(168, 214, 59, 0.65),
+        0 0 38px rgba(168, 214, 59, 0.4),
+        0 9px 0 #719B27;
+}
+
+/* Efecto al presionar */
+.btn-reservar-turno:active {
+    transform: translateY(3px) scale(0.98);
+    box-shadow: 0 2px 0 #719B27;
+}
+
+/* Accesibilidad con teclado */
+.btn-reservar-turno:focus-visible {
+    outline: 3px solid white;
+    outline-offset: 5px;
+}
+
+/* Entrada del botón */
+@keyframes entradaReserva {
+    from {
+        opacity: 0;
+        transform: translateY(18px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Resplandor suave */
+@keyframes brilloReserva {
+    0%, 100% {
+        box-shadow:
+            0 0 12px rgba(168, 214, 59, 0.45),
+            0 0 28px rgba(168, 214, 59, 0.25),
+            0 6px 0 #719B27;
+    }
+
+    50% {
+        box-shadow:
+            0 0 20px rgba(168, 214, 59, 0.7),
+            0 0 40px rgba(168, 214, 59, 0.4),
+            0 6px 0 #719B27;
+    }
+}
+
+/* Adaptación a celulares */
+@media (max-width: 480px) {
+    .btn-reservar-turno {
+        min-width: 0;
+        width: 85%;
+        max-width: 340px;
+        min-height: 76px;
+        padding: 20px 18px;
+        gap: 10px;
+        font-size: 21px;
+        border-radius: 16px;
+    }
+
+    .btn-reservar-turno svg {
+        width: 27px;
+        height: 27px;
+    }
+}
+
+/* Respetar usuarios que prefieren menos animaciones */
+@media (prefers-reduced-motion: reduce) {
+    .btn-reservar-turno {
+        animation: none;
+        transition: none;
+    }
+}
